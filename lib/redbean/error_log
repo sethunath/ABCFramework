@@ -1,0 +1,12 @@
+[25-Apr-2012 16:29:24] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [2005] Unknown MySQL server host 'localhosts' (1)' in /home/nspdindi/public_html/rb/rb.php:53
+Stack trace:
+#0 /home/nspdindi/public_html/rb/rb.php(53): PDO->__construct('mysql:host=loca...', 'nspdindi_liveus...', 'KJL234U213pO1', Array)
+#1 /home/nspdindi/public_html/rb/rb.php(83): RedBean_Driver_PDO->connect()
+#2 /home/nspdindi/public_html/rb/rb.php(111): RedBean_Driver_PDO->runQuery('show tables', Array)
+#3 /home/nspdindi/public_html/rb/rb.php(115): RedBean_Driver_PDO->GetAll('show tables', Array)
+#4 /home/nspdindi/public_html/rb/rb.php(438): RedBean_Driver_PDO->GetCol('show tables', Array)
+#5 /home/nspdindi/public_html/rb/rb.php(759): RedBean_Adapter_DBAdapter->getCol('show tables')
+#6 /home/nspdindi/public_html/rb/rb.php(1407): RedBean_QueryWriter_MySQL->getTables()
+#7 /home/nspdindi/public_html/rb/rb.php(1470): RedBean_OODB->tableExists('leaflet')
+#8 /home/nspdindi/public_html/rb/rb.php(2082): RedBean_OODB->store(Object(RedBean_OODBBean))
+#9  in /home/nspdindi/public_html/rb/rb.php on line 53
