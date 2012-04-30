@@ -14,9 +14,7 @@ class ControllerResolver {
     private $uriParts ;
     function __construct() {
         $this->setRequestUri($_SERVER['REQUEST_URI']);
-        $request_uri =  $_SERVER['REQUEST_URI'];
-        $uriparts =  explode("app.php",$request_uri);
-        $this->uriParts = explode("/", $uriparts[1]);
+        $this->uriParts = ControllerResolver::getUriParts();
     }
 
     public function getRequestUri() {
@@ -49,6 +47,11 @@ class ControllerResolver {
         else{
             $controller->$action($this->uriParts);
         }
+    }
+    public static function getUriParts(){
+        $request_uri =  $_SERVER['REQUEST_URI'];
+        $uriparts =  explode("app.php",$request_uri);
+        return explode("/", $uriparts[1]);
     }
 }
 ?>
