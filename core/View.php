@@ -36,12 +36,12 @@ class View {
         require "views/".$filePath;
         $viewContents = ob_get_contents();
         ob_clean();
-		if($return){
-			return $viewContents;
-		}
-		else{
-        	echo $viewContents;
-		}
+        if($return){
+                return $viewContents;
+        }
+        else{
+            echo $viewContents;
+        }
     }
 }
 ?>
