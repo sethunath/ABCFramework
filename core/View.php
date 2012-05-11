@@ -10,6 +10,7 @@
  * @author nauphal
  */
 require 'ViewElement.php';
+require "Exceptions/NotFoundException/ViewNotFoundException.php";
 class View {
     private  $filePath;
     private $vars;
@@ -27,6 +28,9 @@ class View {
     }
     
     public  function render($filePath,$return=false){
+        if(!file_exists($filePath)){
+            throw new ViewNotFoundException($filePath);
+        }
         $this->filePath = $filePath;
         ob_start();
         require "views/".$filePath;
