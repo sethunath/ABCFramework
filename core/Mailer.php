@@ -39,7 +39,6 @@ class Mailer {
     public function send(){
         $this->message->setFrom($this->from);
         $this->message->setTo($this->to);
-		$this->message->setBcc(array("kgsreejith@ispg.in"=>"None")); 
         return $this->mailer->send($this->message);
     }
 }
